@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/xinwen.css">
+</head>
+<body>
+<a href="/web/xinwen.php?r=recommend">视屏</a>
+<input type="text" id="rem" >
+ <h1>news</h1>
+ <ul>
+    <?php foreach ($rows as $k => $v) { ?>
+
+        <li> <?php  echo $v["title"] ?> </li>
+
+     <?php } ?>
+ </ul>
+
+<script>
+   $(function () {
+       $('#rem').on('click',function () {
+        location.href='../../web/xinwen.php';
+       })
+   })
+
+</script>
+
+</body>
+</html>

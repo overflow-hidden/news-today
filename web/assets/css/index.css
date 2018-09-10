@@ -1,0 +1,227 @@
+/**{*/
+    /*margin: 0;*/
+    /*padding: 20px;*/
+    /*list-style:none ;*/
+    /*text-decoration: none;*/
+/*}*/
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.header{
+    width:100%;
+    height: 0.88rem;
+    background: #d43d3d;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.header .left{
+    width: 1.36rem;
+    height: 100%;
+}
+.header .left i{
+    display: block;
+    font-size: 0.36rem;
+    padding-top: 0.27rem;
+    text-align: center;
+    color: #fff;
+}
+.header .center{
+    width: 4.78rem;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+}
+.center h1{
+    font-size: 0.36rem;
+    line-height: 0.88rem;
+    color: #fff;
+}
+.center .refresh{
+    margin-left: 0.1rem;
+    width: 0.4rem;
+    height: 100%;
+}
+.center .refresh i{
+    display: block;
+    font-size: 0.36rem;
+    padding-top: 0.27rem;
+    text-align: center;
+    color: #fff;
+}
+.header .right{
+    width: 1.36rem;
+    height: 100%;
+}
+.header .right i{
+    display: block;
+    font-size: 0.36rem;
+    padding-top: 0.27rem;
+    text-align: center;
+    color: #fff;
+}
+/*遮罩*/
+.shandow{
+    width: 0;
+    height: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background: #333;
+    opacity: 0.9;
+}
+.shandow.active{
+    width: 7.5rem;
+    height: 100vh;
+}
+/*弹窗*/
+.shandow .window{
+    width: 5.4rem;
+    height: 4.5rem;
+    background: #fff;
+    border-radius: 0.2rem;
+    margin-left:1.2rem;
+    margin-top: 4.5rem;
+    position: relative;
+    display: none;
+}
+.shandow .window.active{
+    display: block;
+}
+.shandow .window .top{
+    width: 100%;
+    padding: 0.2rem 1.2rem 0.1rem;
+}
+.shandow .window .top img{
+    height: 2.16rem;
+}
+.shandow .window p{
+    width: 100%;
+    height: 0.44rem;
+    font-size: 0.36rem;
+    text-align: center;
+    line-height: 0.44rem;
+    color: #a5a5a5;
+}
+.shandow .window .open{
+    width: 4.4rem;
+    height: 0.84rem;
+    background: #ff6762;
+    font-size: 0.36rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.84rem;
+    border-radius: 0.1rem;
+    margin: 0.2rem auto;
+}
+.shandow .window .close{
+    width: 0.8rem;
+    height: 0.64rem;
+    font-size: 0.4rem;
+    color: #a5a5a5;
+    text-align: center;
+    line-height: 0.64rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/*标题*/
+.title{
+    width: 100%;
+    height: 0.72rem;
+    background: #f4f5f6;
+    position: fixed;
+    top: 0.88rem;
+    left: 0;
+}
+.title ul{
+    width: 100%;
+    height: 100%;
+    padding:0.1rem 0.24rem;
+    overflow-x: scroll;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-start;
+}
+.title ul li{
+    width: 1.08rem;
+    height: 0.52rem;
+    font-size: 0.34rem;
+    padding: 0 0.1rem;
+    margin-left: 0.24rem;
+    line-height: 0.52rem;
+
+}
+.title ul li a{
+    color: #333;
+}
+.title li.active a{
+    color: red;
+}
+/*加号定位*/
+.title .more{
+    width: 0.8rem;
+    height: 0.72rem;
+    position: fixed;
+    top: 0.88rem;
+    right: 0;
+    font-size: 0.64rem;
+    line-height: 0.72rem;
+    background:#f4f5f6 ;
+    z-index: 10;
+    text-align: center;
+}
+.title .more a{
+    color: red;
+}
+/*内容*/
+.content{
+    width: 7.5rem;
+    margin-top: 1.8rem;
+    padding: 0 0.24rem;
+    font-size: 0.36rem;
+    color: #333;
+}
+.content ul{
+    width: 7.02rem;
+}
+.content ul li{
+    display: flex;
+    justify-content: flex-start;
+    width: 7.02rem;
+    padding: 0.1rem 0;
+    border-bottom: 0.02rem solid #adaaa6;
+}
+.content .descript{
+    width: 5rem;
+    /*background: #d43d3d;*/
+}
+.content .descript h2{
+    font-size: 0.34rem;
+    color: #333;
+    font-weight: normal;
+}
+.content .descript h3{
+    font-size: 0.28rem;
+    color: #333;
+    font-weight: normal;
+}
+.content .img {
+    width: 2.02rem;
+    height: 100%;
+    /*background:#a5a5a5;*/
+}
+.content .img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}

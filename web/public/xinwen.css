@@ -1,0 +1,10 @@
+*{
+    margin: auto;
+    color: orangered;
+    font-size: 25px;
+
+}
+body{
+    width: 500px;
+    border: 1px solid red;
+}

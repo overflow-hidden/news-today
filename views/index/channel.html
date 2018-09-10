@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>频道</title>
+    <link rel="stylesheet" href="/assets/css/rem.css">
+    <link rel="stylesheet" href="/assets/css/channel.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_791145_k90gpxf8xcd.css">
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="left">
+        <a href="/index.php?c=page&m=index"><i class="iconfont icon-xiangyou-copy"></i></a>
+    </div>
+    <p>频道管理</p>
+</div>
+<div class="content">
+    <span>点击删除以下频道</span>
+    <ul id="top">
+        <?php foreach($top as $k => $v) {?>
+        <li class="<?php echo $v['is_default'] == 1 ?>" data-id="<?php echo $v['id']?>">
+                <?php echo $v['name'] ?>
+        </li>
+        <?php } ?>
+    </ul>
+    <span>点击添加以下频道</span>
+    <ul id="bottom">
+        <?php foreach($bottom as $k => $v) {?>
+        <li class="<?php echo $v['is_default'] == 0 ?>" data-id="<?php echo $v['id']?>">
+            <?php echo $v['name'] ?>
+        </li>
+        <?php } ?>
+    </ul>
+</div>
+</body>
+<script>
+    $(function () {
+        $('#top').on('click','li',function () {
+            let id = $(this).attr('data-id');
+            $.ajax({
+                url:'/index.php',
+                data:{
+                    c:'page',
+                    m:'channellist',
+                    cid:'0',
+                    id:id
+                },success:() => {
+                    $(this).appendTo('#bottom');
+                }
+            })
+        });
+
+        $('#bottom').on('click','li',function () {
+            let id = $(this).attr('data-id');
+            $.ajax({
+                url:'/index.php',
+                data:{
+                    c:'page',
+                    m:'channellist',
+                    cid:'1',
+                    id:id
+                },success:() => {
+                    $(this).appendTo('#top');
+                }
+            })
+        })
+    })
+    
+</script>
+</html>

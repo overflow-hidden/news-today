@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.header{
+    width:100%;
+    height: 1rem;
+    background: #d43d3d;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 0.24rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.header .left{
+    width: 0.48rem;
+    height: 100%;
+}
+.header .left i{
+    display: block;
+    font-size: 0.36rem;
+    text-align: center;
+    line-height: 1rem;
+    color: #fff;
+}
+.header p{
+    height: 100%;
+    padding-left: 2.2rem;
+    font-size: 0.36rem;
+    text-align: center;
+    line-height: 1rem;
+    color: #fff;
+}
+
+/*添加或删减内容*/
+.content{
+    width: 100%;
+    margin-top: 0.4rem;
+    padding-left: 0.24rem;
+    background: #f5f5f5;
+}
+.content span{
+    width: 100%;
+    height: 0.48rem;
+    font-size: 0.24rem;
+    color: #333;
+}
+.content ul{
+    width: 100%;
+    padding: 0 0.24rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.content ul li{
+    width: 1.52rem;
+    height: 0.72rem;
+    margin-bottom: 0.2rem;
+    border: 0.01rem solid #a5a5a5;
+    margin-right: 0.15rem;
+    font-size: 0.36rem;
+    text-align: center;
+    line-height: 0.72rem;
+    color: #333;
+}

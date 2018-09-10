@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>今日头条</title>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/assets/js/jquery.twbsPagination.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/rem.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_791145_e8wypu8jr5c.css">
+</head>
+<body>
+<div class="header">
+    <div class="left">
+        <i class="iconfont icon-youjian"></i>
+    </div>
+    <div class="center">
+        <h1>今日头条</h1>
+        <div class="refresh">
+            <i class="iconfont icon-refresh"></i>
+        </div>
+    </div>
+    <div class="right">
+        <i class="iconfont icon-sousuo"></i>
+    </div>
+</div>
+<!--遮罩-->
+<div class="shandow">
+    <!--弹窗-->
+    <div class="window">
+        <div class="top">
+            <img src="/assets/img/window.png" alt="">
+        </div>
+        <p>已加载好您感兴趣的头条</p>
+        <div class="open">立即打开</div>
+        <div class="close">×</div>
+    </div>
+</div>
+
+<!--标题栏-->
+<div class="title">
+    <ul style="display:flex;">
+        <?php foreach($array as $k => $v) {?>
+        <li class="<?php echo $v['id'] == $cid? 'active':'' ?>">
+            <a href="/index.php?c=page&m=index&cid=<?php echo $v['id'] ?>">
+                <?php echo $v['name'] ?>
+            </a>
+        </li>
+        <?php } ?>
+    </ul>
+    <div class="more"><a href="/index.php?c=page&m=add">＋</a></div>
+</div>
+<!--内容-->
+<div class="content">
+    <ul>
+        <?php foreach($course as $k => $v) {?>
+            <li>
+                <div class="descript">
+                    <a href="<?php echo $v['url']?>"><h2><?php echo $v['title'] ?></h2></a>
+                    <!--<h3><?php echo $v['dsc']?></h3>-->
+                </div>
+                <div class="img">
+                    <a href="<?php echo $v['url']?>"><img src="<?php echo $v['image'] ?>" alt=""></a>
+                </div>
+            </li>
+        <?php } ?>
+    </ul>
+    总条数:
+    <?php echo $num?>
+    <ul id="pagination-demo" class="pagination-sm"></ul>
+</div>
+
+
+
+
+</body>
+<script>
+    var mes = document.querySelector(".header .left i");
+    var sha = document.querySelector(".shandow");
+    var win = document.querySelector(".shandow .window");
+    var clo = document.querySelector(".shandow .window .close");
+
+    mes.addEventListener('click', function () {
+        sha.classList.add('active');
+        win.classList.add('active');
+    });
+    clo.addEventListener('click', function () {
+        sha.classList.remove('active');
+        win.classList.remove('active');
+    })
+
+</script>
+</html>

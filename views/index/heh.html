@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+<form id="form" action="https://www.baidu.com/s" method="get" target="_blank">
+    <input id="wd" type="text" name="wd">
+    <button type="submit">提交</button>
+</form>
+
+</body>
+
+<script>
+    $(function () {
+        $('#form').submit(function () {
+            var wd = $ ('#wd').val();
+            if (wd.trim()){
+                location.href = 'https://www.baidu.com/s?wd='+wd+'site:www.sxuek.com'
+            }else {
+                alert('请输入关键字')
+            }
+            return false;
+        })
+    });
+</script>
+</html>

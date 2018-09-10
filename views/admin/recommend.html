@@ -1,0 +1,42 @@
+
+
+
+<?php include("header.html")?>
+<meta charset="UTF-8">
+<table class="table table-centered mb-0">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>dsc</th>
+        <th>image</th>
+        <th>url</th>
+        <th>create_time</th>
+        <th>content</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <?php foreach ($rows as $k => $v) { ?>
+    <tr data-id="<?php  echo $v['id'] ?>">
+        <td ><?php  echo $v["id"] ?></td>
+        <td><input data-type="title" class="inputs" type="text" id="dsc" value=" <?php  echo $v['title'] ?>" style="border: none"> </td>
+        <td><input data-type="dsc" class="inputs" type="text" id="title" value=" <?php  echo $v['dsc'] ?>" style="border: none"> </td>
+        <td><input data-type="image" class="inputs" type="text"  id="text" value=" <?php  echo $v['image'] ?>" style="border: none"> </td>
+        <td><input data-type="url" class="inputs" type="text"  id="texts" value=" <?php  echo $v['url'] ?>" style="border: none"> </td>
+        <td><input data-type="create_time" class="inputs" type="text"  id="texts" value=" <?php  echo $v['create_time'] ?>" style="border: none;width: 20px"> </td>
+        <td><input data-type="content" class="inputs" type="text"  id="texts" value=" <?php  echo $v['content'] ?>" style="border: none;width: 20px"> </td>
+
+        <td>
+            <button type="button" class="remove btn btn-outline-danger btn-rounded">Danger</button>
+        </td>
+    </tr>
+
+      <?php } ?>
+    </tbody>
+</table>
+
+<button type="button" class="submit btn btn-primary btn-rounded" id="add">添加</button>
+<script src="/xinwen/public/admins.js"></script>
+
+<?php include("footer.html")?>
